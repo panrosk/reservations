@@ -10,7 +10,7 @@ redismemory = RedisChatMessageHistory(url="rediss://default:AVNS_3xDMDtprMAZfUBO
 
 def get_chain(KEY):
     chatgpt_chain = LLMChain(
-    llm=OpenAI(temperature=0,openai_api_key=KEY), 
+    llm=OpenAI(temperature=0,openai_api_key=KEY,model_name="gpt-3.5-turbo"), 
     prompt=prompt, 
     verbose=True, 
     memory=ConversationBufferWindowMemory(chat_memory=redismemory),
